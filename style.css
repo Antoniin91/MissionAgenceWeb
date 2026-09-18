@@ -422,3 +422,135 @@ header.header.collapsed .menu-icon {
         align-items: stretch;
     }
 }
+
+
+/* ---------- Pricing cards (formules) ---------- */
+
+.formules {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-lg);
+    text-align: center;
+}
+
+.formules > h1 {
+    font-size: 30px;
+    margin-bottom: var(--space-sm);
+}
+
+.formules > p {
+    max-width: 640px;
+    margin: 0 auto var(--space-lg);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.cartes-bains {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    text-align: left;
+}
+
+.carte-bain {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+
+    padding: var(--space-md);
+}
+
+.carte-bain h3 {
+    font-size: 20px;
+    margin-bottom: var(--space-xs);
+}
+
+.description-carte {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    margin-bottom: var(--space-sm);
+}
+
+.prix {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: var(--space-sm);
+}
+
+.prix span {
+    font-size: 28px;
+    font-weight: var(--fw-title);
+    color: var(--color-primary-dark);
+}
+
+.prix small {
+    color: var(--color-text-muted);
+    font-size: 13px;
+}
+
+.carte-bain ul {
+    list-style: none;
+    flex: 1;
+    margin-bottom: var(--space-md);
+}
+
+.carte-bain ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+.carte-bain ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-green);
+    font-weight: var(--fw-bold);
+}
+
+.carte-bain button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: var(--radius-sm);
+
+    padding: 12px;
+
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+
+    font-family: var(--font-body);
+    font-weight: var(--fw-title);
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.carte-bain button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.carte-principale {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    box-shadow: var(--shadow-md);
+    transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+    .cartes-bains {
+        grid-template-columns: 1fr;
+    }
+
+    .carte-principale {
+        transform: none;
+    }
+}
