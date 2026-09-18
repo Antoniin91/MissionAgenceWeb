@@ -95,6 +95,28 @@ header.header {
     justify-content: space-between;
 
     padding: var(--space-sm) var(--space-sm) var(--space-md) var(--space-md);
+
+    transition: width var(--transition-base);
+}
+
+/* Collapsed state: toggle by adding/removing the "collapsed" class on
+   header.header (e.g. from the menu-button click handler). */
+header.header.collapsed {
+    width: 88px;
+    padding: var(--space-sm);
+}
+
+header.header.collapsed .header-top {
+    justify-content: center;
+}
+
+header.header.collapsed .logo,
+header.header.collapsed .login-button {
+    display: none;
+}
+
+header.header.collapsed .menu-icon {
+    transform: rotate(180deg);
 }
 
 
@@ -105,27 +127,13 @@ header.header {
 }
 
 
-.logo p {
-    font-family: var(--font-body);
+.logo-img {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
 
-    font-size: 13px;
-    font-weight: var(--fw-bold);
-    color: var(--color-primary-dark);
-
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
-    margin-left: 10px;
-}
-
-.logo h1 {
-    font-family: var(--font-title);
-
-    font-size: 27px;
-    font-weight: var(--fw-title);
-    color: var(--color-text);
-
-    line-height: 1.15;
+    border-radius: var(--radius-md);
 }
 
 
@@ -151,6 +159,7 @@ header.header {
     justify-content: center;
 
     position: relative;
+    transition: transform var(--transition-base);
 }
 
 
@@ -217,6 +226,10 @@ header.header {
 }
 
 .bloc-a-droite > .header {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
     grid-template-areas:
@@ -229,10 +242,27 @@ header.header {
 
     width: auto;
     height: auto;
-    background-color: var(--color-accent-yellow);
     box-shadow: none;
 
     padding: var(--space-xl) var(--space-lg);
+
+    background-image: url("voyage-chihiro-L-jtMmBn.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+.bloc-a-droite > .header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.94) 0%,
+        rgba(255, 255, 255, 0.85) 45%,
+        rgba(255, 255, 255, 0.35) 100%
+    );
 }
 
 .bloc-a-droite > .header h1 {
