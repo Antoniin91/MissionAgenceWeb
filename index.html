@@ -16,7 +16,7 @@
             <img src="154ea577-75e4-44fc-aaa8-36fa082a0f26.png" alt="Le Voyage de Chihiro" class="logo-img">
         </div>
 
-        <button class="menu-button" aria label="Reduire le menu">
+        <button class="menu-button" aria-label="Réduire le menu" aria-expanded="true">
             <span class="menu-icon">
                 <span class="menu-arrow">
                 </span>
@@ -37,17 +37,24 @@
             <h1>Le Voyage de CHIHIRO</h1>
             <video class="hero-media" src="videoplayback.mp4" poster="voyage-chihiro-L-jtMmBn.webp" autoplay muted loop playsinline></video>
             <p>Maison de bains Yubaba - Un lieu mystique où les esprits viennent se purifier, se reposer… ou se perdre. Nichée entre les mondes, cette maison majestueuse accueille toutes les créatures du royaume invisible — à condition d’en payer le prix. Prêt(e) à franchir ses portes et à vivre une expérience inoubliable ? </p>
-            <input type="button" value="Défiler vers le bas">
+            <input type="button" class="scroll-to-registration" value="Défiler vers le bas">
         </div>
 
         <div class="container">
             <h1>Liste de personnels</h1>
             <div class="search-bar">
-                <input type="text" placeholder="Chercher...">
-                <input type="button" value="Rechercher">
-                <p>Profession</p>
-                <p>Types (humain, esprit, sorcière)</p>
+                <input type="text" id="recherche-nom" placeholder="Chercher un nom...">
+                <select id="filtre-profession">
+                    <option value="">Profession</option>
+                </select>
+                <select id="filtre-type">
+                    <option value="">Types (humain, esprit, sorcière)</option>
+                </select>
+                <input type="button" id="bouton-recherche" value="Rechercher">
             </div>
+
+            <div class="personnel-list" id="personnel-list"></div>
+            <p class="personnel-aucun-resultat" id="personnel-aucun-resultat" hidden>Aucun esprit ne correspond à ta recherche…</p>
         </div>
 
         <div class="formules">
@@ -121,7 +128,7 @@
 
             </div>
         </div>
-        <div class="inscription-section">
+        <div class="inscription-section" id="inscription-bain">
             <div class="inscription-content">
                 <h2>Inscription de bains<br>chez Yubaba 🔮 ✨</h2>
 
@@ -196,7 +203,7 @@
             <nav>
                 <a href="#">Accueil</a>
                 <a href="#">Aide</a>
-                <a href="#">BLog</a>
+                <a href="#">Blog</a>
                 <a href="#">Politique</a>
                 <a href="#">Termes</a>
                 <a href="#">Contact</a>

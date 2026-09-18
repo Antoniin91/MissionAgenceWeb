@@ -471,11 +471,72 @@ header.header.collapsed .menu-icon {
     color: var(--color-primary-dark);
 }
 
+.search-bar select {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: 8px 14px;
+
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--color-text-muted);
+
+    background-color: var(--color-bg);
+    cursor: pointer;
+}
+
 @media (max-width: 600px) {
     .search-bar {
         flex-direction: column;
         align-items: stretch;
     }
+}
+
+.personnel-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.personnel-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.personnel-card .personnel-emoji {
+    font-size: 40px;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.personnel-card h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.personnel-card .personnel-profession {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.personnel-card .personnel-type {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-accent-yellow);
+    color: var(--color-text);
+}
+
+.personnel-aucun-resultat {
+    text-align: center;
+    margin-top: var(--space-lg);
+    color: var(--color-text-muted);
 }
 
 
