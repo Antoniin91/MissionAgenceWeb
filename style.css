@@ -41,12 +41,12 @@
     --shadow-md: 0 4px 12px rgba(21, 34, 55, 0.10);
     --shadow-lg: 0 12px 28px rgba(21, 34, 55, 0.14);
 
-    /* Spacing (fluid: shrinks on narrow viewports, no per-section overrides needed) */
+    /* Spacing */
     --space-xs: 8px;
     --space-sm: 16px;
-    --space-md: clamp(16px, 3vw, 24px);
-    --space-lg: clamp(20px, 5vw, 40px);
-    --space-xl: clamp(32px, 8vw, 64px);
+    --space-md: 24px;
+    --space-lg: 40px;
+    --space-xl: 64px;
 
     /* Transitions */
     --ease: cubic-bezier(.4, 0, .2, 1);
@@ -148,50 +148,6 @@ header.header.collapsed .login-button {
 
 header.header.collapsed .menu-icon {
     transform: rotate(180deg);
-}
-
-@media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
-    header.header {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-
-        padding: var(--space-sm) var(--space-md);
-    }
-
-    .header-top {
-        width: auto;
-    }
-
-    .logo-img {
-        max-width: 140px;
-    }
-
-    .login-button {
-        width: auto;
-        height: 40px;
-        padding: 0 var(--space-md);
-    }
-
-    .bloc-a-droite {
-        height: auto;
-        overflow-y: visible;
-        overflow-x: hidden;
-    }
-
-    header.header.collapsed {
-        width: 100%;
-    }
-
-    header.header.collapsed .logo {
-        display: block;
-    }
 }
 
 
@@ -307,6 +263,10 @@ header.header.collapsed .menu-icon {
 }
 
 .bloc-a-droite > .header {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
     grid-template-areas:
@@ -323,16 +283,34 @@ header.header.collapsed .menu-icon {
 
     padding: var(--space-xl) var(--space-lg);
 
-    background-image: url("wallpaper.jpeg");
+    background-image: url("voyage-chihiro-L-jtMmBn.webp");
     background-size: cover;
     background-position: center;
 }
 
+.bloc-a-droite > .header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.55) 0%,
+        rgba(255, 255, 255, 0.3) 45%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.bloc-a-droite > .header h1,
+.bloc-a-droite > .header p {
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
 .bloc-a-droite > .header h1 {
     grid-area: title;
-    font-size: clamp(26px, 4vw, 40px);
+    font-size: 40px;
     text-align: left;
-    color: #ffffff;
 }
 
 .bloc-a-droite > .header .hero-media {
@@ -347,7 +325,7 @@ header.header.collapsed .menu-icon {
 
 .bloc-a-droite > .header p {
     grid-area: text;
-    color: #ffffff;
+    color: var(--color-text-muted);
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
@@ -362,7 +340,7 @@ header.header.collapsed .menu-icon {
     border: none;
     border-radius: var(--radius-sm);
 
-    padding: 10px 20px;
+    padding: 6px 12px;
 
     background-color: var(--color-primary);
     color: var(--color-bg);
@@ -409,7 +387,7 @@ header.header.collapsed .menu-icon {
 }
 
 .container > h1 {
-    font-size: clamp(22px, 3vw, 28px);
+    font-size: 28px;
     margin-bottom: var(--space-md);
 }
 
@@ -493,11 +471,72 @@ header.header.collapsed .menu-icon {
     color: var(--color-primary-dark);
 }
 
+.search-bar select {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: 8px 14px;
+
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--color-text-muted);
+
+    background-color: var(--color-bg);
+    cursor: pointer;
+}
+
 @media (max-width: 600px) {
     .search-bar {
         flex-direction: column;
         align-items: stretch;
     }
+}
+
+.personnel-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.personnel-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.personnel-card .personnel-emoji {
+    font-size: 40px;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.personnel-card h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.personnel-card .personnel-profession {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.personnel-card .personnel-type {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-accent-yellow);
+    color: var(--color-text);
+}
+
+.personnel-aucun-resultat {
+    text-align: center;
+    margin-top: var(--space-lg);
+    color: var(--color-text-muted);
 }
 
 
@@ -515,7 +554,7 @@ header.header.collapsed .menu-icon {
 }
 
 .formules > h1 {
-    font-size: clamp(24px, 3.5vw, 30px);
+    font-size: 30px;
     margin-bottom: var(--space-sm);
 }
 
@@ -656,7 +695,7 @@ header.header.collapsed .menu-icon {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xl);
-    align-items: center;
+    align-items: start;
 
     max-width: 1100px;
     margin: 0 auto;
@@ -667,26 +706,21 @@ header.header.collapsed .menu-icon {
     clip-path: inset(0 -100vmax);
 }
 
-.inscription-content {
-    text-align: center;
-}
-
 .inscription-content h2 {
-    font-size: clamp(24px, 3.5vw, 32px);
+    font-size: 28px;
     margin-bottom: var(--space-sm);
 }
 
 .inscription-content p {
     color: var(--color-text-muted);
-    font-size: 17px;
     line-height: 1.6;
 }
 
 .form-card {
-    background-color: var(--color-bg);
+    background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
 
     padding: var(--space-lg);
 }
@@ -749,28 +783,24 @@ header.header.collapsed .menu-icon {
     flex: 1;
 }
 
-/* Both "Espèce" (.options) and "Type de bain" (.options.bains) use the same
-   stacked, one-option-per-row layout — keep them sharing this ruleset so
-   they never drift apart visually. */
 .options {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-bottom: 4px;
 }
 
 .options label {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    width: 100%;
+    gap: 6px;
     margin: 0;
 
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: 10px 14px;
+    border-radius: var(--radius-pill);
+    padding: 8px 14px;
 
-    font-size: 14px;
+    font-size: 13px;
     font-weight: var(--fw-body);
     cursor: pointer;
     transition: border-color var(--transition-fast), background-color var(--transition-fast);
@@ -820,17 +850,6 @@ header.header.collapsed .menu-icon {
 @media (max-width: 900px) {
     .inscription-section {
         grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 420px) {
-    .telephone,
-    .date-time {
-        flex-direction: column;
-    }
-
-    .telephone select {
-        flex: 1;
     }
 }
 
