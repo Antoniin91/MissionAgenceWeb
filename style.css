@@ -61,6 +61,10 @@
 }
 
 body {
+    display: flex;
+    align-items: stretch;
+    min-height: 100vh;
+
     font-family: var(--font-body);
     font-weight: var(--fw-body);
     color: var(--color-text);
@@ -78,17 +82,19 @@ a {
     color: var(--color-primary-dark);
 }
 
-.header {
+header.header {
+    flex-shrink: 0;
     width: 310px;
     height: 100vh;
 
-    background-color: #f4ffff;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-sm);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    padding: 18px 13px 14px 20px;
+    padding: var(--space-sm) var(--space-sm) var(--space-md) var(--space-md);
 }
 
 
@@ -100,23 +106,26 @@ a {
 
 
 .logo p {
-    font-family: Georgia, serif;
+    font-family: var(--font-body);
 
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: var(--fw-bold);
+    color: var(--color-primary-dark);
 
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 
     margin-left: 10px;
 }
 
 .logo h1 {
-    font-family: Georgia, serif;
+    font-family: var(--font-title);
 
     font-size: 27px;
-    font-weight: bold;
+    font-weight: var(--fw-title);
+    color: var(--color-text);
 
-    line-height: 23px;
+    line-height: 1.15;
 }
 
 
@@ -134,8 +143,8 @@ a {
     width: 18px;
     height: 18px;
 
-    border: 2px solid #006b68;
-    border-radius: 4px;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-sm);
 
     display: flex;
     align-items: center;
@@ -157,12 +166,12 @@ a {
     width: 2px;
     height: 10px;
 
-    background-color: #006b68;
+    background-color: var(--color-primary);
 }
 
 
 .menu-arrow {
-    color: #006b68;
+    color: var(--color-primary);
 
     font-size: 13px;
     font-weight: bold;
@@ -179,19 +188,90 @@ a {
     height: 44px;
 
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 
-    background-color: #20beb8;
+    background-color: var(--color-primary);
 
-    color: black;
+    color: var(--color-bg);
 
+    font-family: var(--font-body);
     font-size: 15px;
-    font-weight: bold;
+    font-weight: var(--fw-title);
 
     cursor: pointer;
 }
 
 
 .login-button:hover {
-    background-color: #1aaca7;
+    background-color: var(--color-primary-dark);
+}
+
+
+/* ---------- Hero (bloc-a-droite > .header) ---------- */
+
+.bloc-a-droite {
+    flex: 1;
+    min-width: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.bloc-a-droite > .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: auto;
+    height: auto;
+    background-color: var(--color-bg);
+    box-shadow: none;
+
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.bloc-a-droite > .header h1 {
+    font-size: 40px;
+    margin-bottom: var(--space-md);
+}
+
+.bloc-a-droite > .header img {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+
+    margin-bottom: var(--space-md);
+}
+
+.bloc-a-droite > .header p {
+    max-width: 640px;
+    color: var(--color-text-muted);
+    font-size: 16px;
+    line-height: 1.6;
+
+    margin-bottom: var(--space-md);
+}
+
+.bloc-a-droite > .header input[type="button"] {
+    border: none;
+    border-radius: var(--radius-pill);
+
+    padding: 14px 32px;
+
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: var(--fw-title);
+
+    cursor: pointer;
+}
+
+.bloc-a-droite > .header input[type="button"]:hover {
+    background-color: var(--color-primary-dark);
 }
