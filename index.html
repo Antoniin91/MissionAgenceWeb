@@ -10,6 +10,166 @@
 </head>
 
 <body>
+    
+    <div class="bloc-a-droite">
+        <div class="header">
+            <h1>Le Voyage de CHIHIRO</h1>
+            <img src="photo-a-mettre" alt="photo de Chihiro">
+            <p>Maison de bains Yubaba - Un lieu mystique où les esprits viennent se purifier, se reposer… ou se perdre. Nichée entre les mondes, cette maison majestueuse accueille toutes les créatures du royaume invisible — à condition d’en payer le prix. Prêt(e) à franchir ses portes et à vivre une expérience inoubliable ? </p>
+            <input type="button" value="Défiler vers le bas">
+        </div>
+
+        <div class="container">
+            <h1>Liste de personnels</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Chercher...">
+                <input type="button" value="Rechercher">
+                <p>Profession</p>
+                <p>Types (humain, esprit, sorcière)</p>
+            </div>
+        </div>
+
+        <div class="formules">
+            <h1>🌿 Trois chemins, un seul repos 🌕🛁</h1>
+            <p>Chaque bain a ses vertus, chaque prix son mystère. Que tu sois un esprit timide ou une créature divine, la maison de bains t’ouvre ses portes… à la bonne offrande</p>
+            <div class="cartes-bains">
+                
+                <div class="carte-bain">
+                    <h3>Bain aux Herbes</h3>
+
+                    <p class="description-carte">Pour les esprits discrets qui veulent se détendre sans faire de vagues</p>
+
+                <div class="prix">
+                    <span>15 €</span>
+                    <small>/heure</small>
+                </div>
+
+                <ul>
+                    <li>Bain purifiant infusé aux herbes célestes</li>
+                    <li>Serviette douce de coton lunaire</li>
+                    <li>Thé apaisant offert en fin de bain</li>
+                    <li>Accès à la salle de repos commune</li>
+                </ul>
+
+                <button>Réserver le bain</button>
+                </div>
+
+
+                <div class="carte-bain carte-principale">
+                    <h3>Source Volcanique</h3>
+
+                    <p class="description-carte">Pour les esprits fatigués qui ont besoin de chaleur, de confort et d'énergie</p>
+
+                    <div class="prix">
+                        <span>35 €</span>
+                        <small>/heure</small>
+                    </div>
+
+                    <ul>
+                        <li>Bain thermominéral extrait du Mont Tengu</li>
+                        <li>Massage rapide des épaules par des grenouilles guérisseuses</li>
+                        <li>Boisson tonique servie au bord du bassin</li>
+                        <li>Serviette chaude enchantée incluse</li>
+                    </ul>
+
+                    <button>Réserver le bain</button>
+                </div>
+
+
+        
+                <div class="carte-bain">
+                    <h3>Bain de Nuages</h3>
+
+                    <p class="description-carte"> Pour les esprits nobles (ou capricieux) qui veulent flotter dans le luxe</p>
+
+                    <div class="prix">
+                        <span>60 €</span>
+                        <small>/heure</small>
+                    </div>
+
+                    <ul>
+                        <li>Bain aérien en vapeur de nuages enchantés</li>
+                        <li>Chambre privée avec vue sur les lanternes du monde des esprits</li>
+                        <li>Massage complet et soin de peau par les mains invisibles</li>
+                        <li>Repas végétal mystique inclus</li>
+                        <li>Cadeau surprise laissé par Yubaba elle-même</li>
+                    </ul>
+
+                    <button>Réserver le bain</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="inscription-section">
+            <div class="inscription-content">
+                <h2>Inscription de bains<br>chez Yubaba 🔮 ✨</h2>
+
+                <p>Esprit voyageur, bienvenue à la maison de bains ! Dis-nous qui tu es, choisis ton bain préféré (aux herbes, de vapeur ou volcanique), ta date d’arrivée, et ton nom d’esprit. Va t’attend... mais attention, une fois ton nom inscrit, il pourrait ne plus t’appartenir 👀</p>
+            </div>
+
+            <div class="form-card">
+                <form>
+
+                    <label for="nom">Nom de l'esprit *</label>
+                    <input type="text" id="nom" name="nom">
+
+                    <label for="telephone">Numéro de téléphone *</label>
+                    <div class="telephone">
+                        <select>
+                        <option>FR⌄</option>
+                        </select>
+                        <input type="tel" id="telephone" name="telephone">
+                    </div>
+
+                    <label>Espèce *</label>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" name="espece" value="esprit">
+                            <span>Esprit</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="espece" value="humaine">
+                            <span>Humaine</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="espece" value="sorciere">
+                            <span>Sorcière</span>
+                        </label>
+                    </div>
+
+                    <label for="date">Date arrivée *</label>
+                    <div class="date-time">
+                        <input type="date" id="date" name="date">
+                        <input type="time" id="heure" name="heure">
+                    </div>
+
+                    <label>Type de bain souhaité *</label>
+                    <div class="options bains">
+                        <label>
+                            <input type="checkbox" name="bain" value="herbes">
+                            <span>Bain aux herbes</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="bain" value="nuages">
+                            <span>Bain de nuages</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="bain" value="volcanique">
+                            <span>Source volcanique</span>
+                        </label>
+                    </div>
+
+                    <button type="submit">Réserver le bain</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>© 2026 Notre site - Tous droits réservés.</p>
 
