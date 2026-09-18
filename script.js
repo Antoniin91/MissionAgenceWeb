@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const menuButton = document.querySelector(".menu-button");
 	const menu = menuButton?.closest("header.header");
+	const scrollButton = document.querySelector(".scroll-to-registration");
+	const registrationSection = document.querySelector("#inscription-bain");
+
+	scrollButton?.addEventListener("click", () => {
+		registrationSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+	});
 
 	if (!menuButton || !menu) {
 		return;
