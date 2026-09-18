@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	const menu = menuButton?.closest("header.header");
 	const scrollButton = document.querySelector(".scroll-to-registration");
 	const registrationSection = document.querySelector("#inscription-bain");
+	const reservationForm = document.querySelector(".form-card form");
+	const reservationButtons = document.querySelectorAll(".carte-bain button");
+
+	const showReservationConfirmation = () => {
+		window.alert("Confirmation : votre bain est réservé chez Yubaba !");
+	};
 
 	scrollButton?.addEventListener("click", () => {
 		registrationSection?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -22,6 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
 			);
 		});
 	}
+
+	reservationForm?.addEventListener("submit", (event) => {
+		event.preventDefault();
+		showReservationConfirmation();
+	});
+
+	reservationButtons.forEach((button) => {
+		button.addEventListener("click", showReservationConfirmation);
+	});
 
 	initPersonnelSearch();
 });
