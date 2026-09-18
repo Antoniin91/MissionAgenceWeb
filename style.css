@@ -263,10 +263,6 @@ header.header.collapsed .menu-icon {
 }
 
 .bloc-a-droite > .header {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
     grid-template-areas:
@@ -283,29 +279,16 @@ header.header.collapsed .menu-icon {
 
     padding: var(--space-xl) var(--space-lg);
 
-    background-image: url("voyage-chihiro-L-jtMmBn.webp");
+    background-image: url("wallpaper.jpeg");
     background-size: cover;
     background-position: center;
-}
-
-.bloc-a-droite > .header::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.94) 0%,
-        rgba(255, 255, 255, 0.85) 45%,
-        rgba(255, 255, 255, 0.35) 100%
-    );
 }
 
 .bloc-a-droite > .header h1 {
     grid-area: title;
     font-size: 40px;
     text-align: left;
+    color: #ffffff;
 }
 
 .bloc-a-droite > .header .hero-media {
@@ -320,7 +303,7 @@ header.header.collapsed .menu-icon {
 
 .bloc-a-droite > .header p {
     grid-area: text;
-    color: var(--color-text-muted);
+    color: #ffffff;
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
@@ -335,7 +318,7 @@ header.header.collapsed .menu-icon {
     border: none;
     border-radius: var(--radius-sm);
 
-    padding: 6px 12px;
+    padding: 10px 20px;
 
     background-color: var(--color-primary);
     color: var(--color-bg);
@@ -717,24 +700,28 @@ header.header.collapsed .menu-icon {
     flex: 1;
 }
 
+/* Both "Espèce" (.options) and "Type de bain" (.options.bains) use the same
+   stacked, one-option-per-row layout — keep them sharing this ruleset so
+   they never drift apart visually. */
 .options {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 8px;
     margin-bottom: 4px;
 }
 
 .options label {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
+    width: 100%;
     margin: 0;
 
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-pill);
-    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
 
-    font-size: 13px;
+    font-size: 14px;
     font-weight: var(--fw-body);
     cursor: pointer;
     transition: border-color var(--transition-fast), background-color var(--transition-fast);
