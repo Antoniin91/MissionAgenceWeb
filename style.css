@@ -259,6 +259,7 @@ header.header.collapsed .menu-icon {
     min-width: 0;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .bloc-a-droite > .header {
@@ -374,6 +375,10 @@ header.header.collapsed .menu-icon {
     max-width: 1100px;
     margin: 0 auto;
     padding: var(--space-lg);
+
+    background-color: var(--color-accent-yellow);
+    box-shadow: 0 0 0 100vmax var(--color-accent-yellow);
+    clip-path: inset(0 -100vmax);
 }
 
 .container > h1 {
@@ -476,6 +481,10 @@ header.header.collapsed .menu-icon {
     margin: 0 auto;
     padding: var(--space-xl) var(--space-lg);
     text-align: center;
+
+    background-color: var(--color-bg);
+    box-shadow: 0 0 0 100vmax var(--color-bg);
+    clip-path: inset(0 -100vmax);
 }
 
 .formules > h1 {
@@ -625,6 +634,10 @@ header.header.collapsed .menu-icon {
     max-width: 1100px;
     margin: 0 auto;
     padding: var(--space-xl) var(--space-lg);
+
+    background-color: var(--color-accent-yellow);
+    box-shadow: 0 0 0 100vmax var(--color-accent-yellow);
+    clip-path: inset(0 -100vmax);
 }
 
 .inscription-content h2 {
