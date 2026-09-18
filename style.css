@@ -296,10 +296,15 @@ header.header.collapsed .menu-icon {
 
     background: linear-gradient(
         to right,
-        rgba(255, 255, 255, 0.94) 0%,
-        rgba(255, 255, 255, 0.85) 45%,
-        rgba(255, 255, 255, 0.35) 100%
+        rgba(255, 255, 255, 0.55) 0%,
+        rgba(255, 255, 255, 0.3) 45%,
+        rgba(255, 255, 255, 0) 100%
     );
+}
+
+.bloc-a-droite > .header h1,
+.bloc-a-droite > .header p {
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
 }
 
 .bloc-a-droite > .header h1 {
