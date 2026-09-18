@@ -43,11 +43,18 @@
         <div class="container">
             <h1>Liste de personnels</h1>
             <div class="search-bar">
-                <input type="text" placeholder="Chercher...">
-                <input type="button" value="Rechercher">
-                <p>Profession</p>
-                <p>Types (humain, esprit, sorcière)</p>
+                <input type="text" id="recherche-nom" placeholder="Chercher un nom...">
+                <select id="filtre-profession">
+                    <option value="">Profession</option>
+                </select>
+                <select id="filtre-type">
+                    <option value="">Types (humain, esprit, sorcière)</option>
+                </select>
+                <input type="button" id="bouton-recherche" value="Rechercher">
             </div>
+
+            <div class="personnel-list" id="personnel-list"></div>
+            <p class="personnel-aucun-resultat" id="personnel-aucun-resultat" hidden>Aucun esprit ne correspond à ta recherche…</p>
         </div>
 
         <div class="formules">
