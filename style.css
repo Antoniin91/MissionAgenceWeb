@@ -41,12 +41,12 @@
     --shadow-md: 0 4px 12px rgba(21, 34, 55, 0.10);
     --shadow-lg: 0 12px 28px rgba(21, 34, 55, 0.14);
 
-    /* Spacing */
+    /* Spacing (fluid: shrinks on narrow viewports, no per-section overrides needed) */
     --space-xs: 8px;
     --space-sm: 16px;
-    --space-md: 24px;
-    --space-lg: 40px;
-    --space-xl: 64px;
+    --space-md: clamp(16px, 3vw, 24px);
+    --space-lg: clamp(20px, 5vw, 40px);
+    --space-xl: clamp(32px, 8vw, 64px);
 
     /* Transitions */
     --ease: cubic-bezier(.4, 0, .2, 1);
@@ -148,6 +148,50 @@ header.header.collapsed .login-button {
 
 header.header.collapsed .menu-icon {
     transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    header.header {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .header-top {
+        width: auto;
+    }
+
+    .logo-img {
+        max-width: 140px;
+    }
+
+    .login-button {
+        width: auto;
+        height: 40px;
+        padding: 0 var(--space-md);
+    }
+
+    .bloc-a-droite {
+        height: auto;
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+
+    header.header.collapsed {
+        width: 100%;
+    }
+
+    header.header.collapsed .logo {
+        display: block;
+    }
 }
 
 
@@ -286,7 +330,7 @@ header.header.collapsed .menu-icon {
 
 .bloc-a-droite > .header h1 {
     grid-area: title;
-    font-size: 40px;
+    font-size: clamp(26px, 4vw, 40px);
     text-align: left;
     color: #ffffff;
 }
@@ -365,7 +409,7 @@ header.header.collapsed .menu-icon {
 }
 
 .container > h1 {
-    font-size: 28px;
+    font-size: clamp(22px, 3vw, 28px);
     margin-bottom: var(--space-md);
 }
 
@@ -471,7 +515,7 @@ header.header.collapsed .menu-icon {
 }
 
 .formules > h1 {
-    font-size: 30px;
+    font-size: clamp(24px, 3.5vw, 30px);
     margin-bottom: var(--space-sm);
 }
 
@@ -612,7 +656,7 @@ header.header.collapsed .menu-icon {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xl);
-    align-items: start;
+    align-items: center;
 
     max-width: 1100px;
     margin: 0 auto;
@@ -623,21 +667,26 @@ header.header.collapsed .menu-icon {
     clip-path: inset(0 -100vmax);
 }
 
+.inscription-content {
+    text-align: center;
+}
+
 .inscription-content h2 {
-    font-size: 28px;
+    font-size: clamp(24px, 3.5vw, 32px);
     margin-bottom: var(--space-sm);
 }
 
 .inscription-content p {
     color: var(--color-text-muted);
+    font-size: 17px;
     line-height: 1.6;
 }
 
 .form-card {
-    background-color: var(--color-surface);
+    background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
 
     padding: var(--space-lg);
 }
@@ -706,7 +755,7 @@ header.header.collapsed .menu-icon {
 .options {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
     margin-bottom: 4px;
 }
 
@@ -771,6 +820,17 @@ header.header.collapsed .menu-icon {
 @media (max-width: 900px) {
     .inscription-section {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .telephone,
+    .date-time {
+        flex-direction: column;
+    }
+
+    .telephone select {
+        flex: 1;
     }
 }
 
