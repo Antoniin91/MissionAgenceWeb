@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* FOOTER */
+
+.footer {
+    width: 100%;
+    padding: 60px 16px 0;
+    background-color: white;
+}
+
+/* Partie du haut */
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 90px;
+}
+
+/* Logo */
+
+.logo {
+    width: 220px;
+    text-align: center;
+    color: #000;
+}
+
+.logo span {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+/* Navigation */
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #5f5f5f;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.footer-nav a:hover {
+    color: #000;
+}
+
+/* Ligne */
+
+.footer-line {
+    height: 1px;
+    background-color: #e5e5e5;
+    margin-top: 50px;
+}
+
+/* Partie du bas */
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 40px 0 10px;
+}
+
+.footer-bottom p {
+    font-size: 34px;
+    color: #172238;
+}
+
+/* Réseaux sociaux */
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #626262;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.socials a:hover {
+    color: #000;
+}
