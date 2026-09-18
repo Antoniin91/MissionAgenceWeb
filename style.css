@@ -1,0 +1,128 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 310px;
+    height: 100vh;
+
+    background-color: #f4ffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 18px 13px 14px 20px;
+}
+
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.logo p {
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    margin-left: 10px;
+}
+
+.logo h1 {
+    font-family: Georgia, serif;
+
+    font-size: 27px;
+    font-weight: bold;
+
+    line-height: 23px;
+}
+
+
+.menu-button {
+    border: none;
+    background: none;
+
+    padding: 0;
+
+    cursor: pointer;
+}
+
+
+.menu-icon {
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid #006b68;
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+
+.menu-icon::after {
+    content: "";
+
+    position: absolute;
+
+    right: 3px;
+    top: 2px;
+
+    width: 2px;
+    height: 10px;
+
+    background-color: #006b68;
+}
+
+
+.menu-arrow {
+    color: #006b68;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    position: absolute;
+
+    left: 1px;
+    top: -1px;
+}
+
+
+.login-button {
+    width: 100%;
+    height: 44px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #20beb8;
+
+    color: black;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.login-button:hover {
+    background-color: #1aaca7;
+}
